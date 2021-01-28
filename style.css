@@ -1,0 +1,120 @@
+*{
+    list-style-type: none; 
+    text-decoration: none;
+    color: white;
+}
+body{
+    background-color:rgb(50, 58, 134)
+}
+.wrapper.active p{
+    color: rgb(50 58 134);
+    transition-delay: 150ms;
+    transition-duration: 350ms;
+}
+.main-contents p{
+    color: white;
+}
+.main-footer.active span{
+    color: rgb(50 58 134);
+    transition-duration: 350ms;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 1550px;
+    padding-top: .5rem;
+    width: 93%;
+}
+.masthead{
+    position: relative;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-toggle{
+    width: 55px;
+}
+.menu-toggle div{
+    background-color: white;
+    border-radius: 25px;
+    height: 7px;
+}
+.menu-toggle .one,
+.menu-toggle .two{
+    margin-bottom: 7px;
+}
+.main-contents{
+    flex: auto;
+}
+.main-contents h2,h1{
+    text-transform: uppercase;
+}
+.main-nav-list::before,
+.main-nav-list::after{
+    background-color:rgb(100, 228, 237);
+    content:"";
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0vw;
+    transition: all 100ms ease-in-out 300ms;
+}
+.main-nav-list::before{
+    left: 0;
+}
+.main-nav-list::after{
+    right: 0;
+}
+.main-nav-list ul{
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    z-index: 2000;
+}
+.main-nav-list a{
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    opacity: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition-delay: 130ms;
+}
+
+.main-nav-list .mobile-hide{
+    display: none;
+}
+.menu-toggle.active .one{
+    transform: translate(0, 14px) rotate(45deg); 
+}
+.menu-toggle.active .two{
+    background-color: transparent;
+    box-shadow: none;
+    transform: translateX(-55px);
+}
+.menu-toggle.active .three{
+    transform: translate(0,-14px) rotate(-45deg);
+}
+.main-nav-list.active::before,
+.main-nav-list.active::after{
+    width: 30vw;
+}
+.main-nav-list.active ul{
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.main-nav-list.active a{
+    transition-delay: 600ms;
+    opacity: 1;
+}
+
+
+
